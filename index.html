@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balzane. — Application bientôt disponible</title>
+  <meta name="description" content="Prépare tes Galops, à ton rythme. L'application Balzane arrive bientôt.">
+  <meta name="theme-color" content="#F8F3EA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background: #F8F3EA;
+      --background-sunken: #F5EEE2;
+      --card: #FFFFFF;
+      --foreground: #2F2119;
+      --secondary: #6E4E3D;
+      --tertiary: #9C7C51;
+      --primary: #D96A1C;
+      --primary-subtle: #FDF1E7;
+      --border: #E1CFB0;
+      --border-subtle: #E7D9C1;
+      --success: #475737;
+      --success-light: #E5EADB;
+
+      --font-display: "Domine", Georgia, serif;
+      --font-body: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: 100%;
+      max-width: 560px;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: reveal 600ms var(--ease) forwards;
+      animation-delay: calc(var(--i, 0) * 120ms);
+    }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: none; }
+    }
+
+    .wordmark {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(3.5rem, 14vw, 5.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .wordmark span { color: var(--primary); }
+
+    .tagline {
+      margin-top: 8px;
+      font-size: 1.125rem;
+      color: var(--secondary);
+    }
+
+    .card {
+      margin-top: 56px;
+      padding: 40px 32px;
+      background: var(--card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 26px;
+      box-shadow: 0 8px 28px rgba(87, 62, 48, 0.08);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.75rem, 6vw, 2.25rem);
+      line-height: 1.2;
+    }
+
+    .lead {
+      margin-top: 12px;
+      color: var(--secondary);
+    }
+
+    .galops {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .galops li {
+      list-style: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--background-sunken);
+      color: var(--secondary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: background 200ms var(--ease), border-color 200ms var(--ease);
+    }
+    .galops li:hover {
+      background: var(--card);
+      border-color: var(--primary);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.875rem;
+      color: var(--tertiary);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="reveal" style="--i: 0">
+      <p class="wordmark">Balzane<span>.</span></p>
+      <p class="tagline">Prépare tes Galops, à ton rythme.</p>
+    </header>
+
+    <section class="card reveal" style="--i: 2">
+      <span class="badge">Bientôt</span>
+      <h1>Application bientôt disponible</h1>
+      <p class="lead">On met les dernières touches. Ton parcours du Galop 1 au Galop 4 arrive très vite.</p>
+      <ul class="galops" aria-label="Galops couverts">
+        <li>Galop 1</li>
+        <li>Galop 2</li>
+        <li>Galop 3</li>
+        <li>Galop 4</li>
+      </ul>
+    </section>
+
+    <footer class="reveal" style="--i: 4">© 2026 Balzane</footer>
+  </main>
+</body>
+</html>
